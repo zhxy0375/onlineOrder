@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/tx
+                http://www.springframework.org/schema/tx/spring-tx.xsd
+                http://www.springframework.org/schema/aop
+                http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+
+  
+    <!-- 配置DataSource数据源 -->
+    <bean id="mybatisDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="driverClassName" value="${dbcp.driver}" />
+        <property name="url" value="${dbcp.url}" />
+        <property name="username" value="${dbcp.username}" />
+        <property name="password" value="${dbcp.password}" />
+        <property name="maxActive" value="${dbcp.maxActive}" />
+        <property name="initialSize" value="${dbcp.initialSize}" />
+        <property name="maxWait" value="${dbcp.maxWait}" />
+        <property name="maxIdle" value="${dbcp.maxIdle}" />
+        <property name="minIdle" value="${dbcp.minIdle}" />
+        <property name="removeAbandoned" value="true" />
+        <property name="removeAbandonedTimeout" value="180" />
+        <property name="connectionProperties" value="clientEncoding=UTF-8" />
+        <!-- 打开检查,用异步线程evict进行检查 -->
+        <property name="testWhileIdle"><value>true</value></property>
+        <property name="testOnBorrow"><value>false</value></property>
+        <property name="testOnReturn"><value>false</value></property>
+        <property name="timeBetweenEvictionRunsMillis"><value>30000</value></property>
+        <property name="numTestsPerEvictionRun"><value>20</value></property>
+    </bean>
+
+
+    <!-- 创建SqlSessionFactory，同时指定数据源 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="mybatisDataSource" />
+        <property name="configLocation" value="classpath:spring/mybatis-config.xml" />
+  <!--      <property name="typeAliasesPackage" >
+            <value>org.dxc.model;</value>
+        </property>
+         <property name="typeAliases" >
+         	<array>
+         		<value>com.dooioo.se.dao.support.Pagination</value>
+         	</array>
+         </property>
+          --> 
+        <property name="mapperLocations" >
+            <list>
+                <value>classpath:mapper/*Mapper.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>
+
+</beans>

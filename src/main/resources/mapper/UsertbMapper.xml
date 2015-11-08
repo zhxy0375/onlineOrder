@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UsertbMapper" >
+
+    <select id="selectOne" resultType="org.dxc.onlineOrder.model.Usertb">
+        SELECT  * FROM usertb limit 1 
+    </select>
+    
+    <select id="queryList" resultType="org.dxc.onlineOrder.model.Usertb">
+        SELECT us.age ,us.id ,us.ucreatetime,  us.uname
+        FROM    usertb  us  limit 10 
+    </select>
+    
+    <update id="updateAge">
+        UPDATE usertb SET age = 25 where id = 1
+    </update>
+
+</mapper>
