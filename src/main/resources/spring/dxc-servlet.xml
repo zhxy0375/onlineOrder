@@ -28,7 +28,10 @@
         <property name="ignoreUnresolvablePlaceholders" value="true" />
     </bean>
 
-<!-- http://blog.csdn.net/yfisaboy/article/details/31755631   -->
+<!-- http://blog.csdn.net/yfisaboy/article/details/31755631   
+   http://www.blogjava.net/crazycy/archive/2014/07/16/415864.html
+-->
+
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean"/>
     <mvc:annotation-driven conversion-service="conversionService">
 		<mvc:message-converters>
