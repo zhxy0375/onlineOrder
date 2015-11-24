@@ -99,4 +99,9 @@
     <!--Memcache加载
     <import resource="classpath:spring/memcache.xml" /> -->
     
+    <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
+
+	<bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"/>
+
+
 </beans>

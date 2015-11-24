@@ -39,7 +39,7 @@
 	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring/applicationContext.xml</param-value>
+		<param-value>classpath:spring/*.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
@@ -63,6 +63,16 @@
 		<servlet-name>dxc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<!--spring session filter 放在所有filter 前面 -->
+	<filter>
+    	<filter-name>springSessionRepositoryFilter</filter-name>
+   	 <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>springSessionRepositoryFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 	<filter>
 		<filter-name>httpMethodFilter</filter-name>
 		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
@@ -72,6 +82,7 @@
 		<filter-name>httpMethodFilter</filter-name>
 		<servlet-name>dxc</servlet-name>
 	</filter-mapping>
+	
 	<!--入口跳转-->
 	<welcome-file-list>
 		<welcome-file>/index.jsp</welcome-file>

@@ -2,6 +2,8 @@ package org.dxc.onlineOrder.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.dxc.onlineOrder.model.Usertb;
 import org.dxc.onlineOrder.service.UserService;
 import org.slf4j.Logger;
@@ -23,9 +25,13 @@ public class UserController  {
     
     @ResponseBody
     @RequestMapping("/{id}")
-    public Usertb getRandomOne (@PathVariable String id){
+    public Usertb getRandomOne (@PathVariable String id, HttpServletRequest req){
+    	
     	LOGGER.info("id:{}",id);
     	Usertb us =  userService.getRandomOne();
+    	us.setUname("这里是redis的");
+    	//这里是redis的
+    	req.getSession().setAttribute("user", us);
     	return us;
     }
     
