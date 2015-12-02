@@ -22,6 +22,7 @@
             <list>
                 <value>classpath:global.properties</value>
                 <value>classpath:jdbc.properties</value>
+                <value>classpath:session.properties</value>
             </list>
         </property>
         <property name="ignoreResourceNotFound" value="true" />
@@ -98,10 +99,5 @@
 	<import resource="classpath:spring/mybatis-dataSource.xml"/> 
     <!--Memcache加载
     <import resource="classpath:spring/memcache.xml" /> -->
-    
-    <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
-
-	<bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"/>
-
 
 </beans>
