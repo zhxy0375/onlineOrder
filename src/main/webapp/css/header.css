@@ -1,0 +1,82 @@
+body {margin-top:55px}
+.headerWrap {width:100%; height:42px; text-align:center; background:#39AC6A; -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.45); box-shadow: 0 1px 2px rgba(0,0,0,0.45); position:fixed; z-index:990; left:0; top:0}
+.header {width:960px; height:42px; margin:0 auto}
+a.logo_mini {width:125px; height:20px; background:url(../images/bg_logo_lianjia.png) no-repeat left 0; margin:15px 20px 0 0}
+
+.mainMenu {}
+.mainMenu a{height:42px; line-height:46px;overflow:hidden; padding:0 15px; color:#fff; font-weight:bold; text-decoration:none; display:block; float:left; font-size:14px; margin-left:1px}
+.mainMenu a:hover{color:#fff; text-decoration:none;background:url(../images/bg_mainMenuSub.gif) no-repeat right 20px}
+.mainMenu a.sub { padding-right:22px; text-decoration:none}
+.mainMenu a.message {background-image:none; padding:0 15px; text-decoration:none;}
+.mainMenu a.focus{background:#30925A url(../images/bg_mainMenuSub.gif) no-repeat right 20px;color:#fff;}
+.mainMenu a.current{background-color:#30925A}
+.topNav {font-size:12px}
+.topNav a{font-size:12px; padding:0px 8px 0px 12px; color:#fff;font-weight:normal;background: url(../images/bg_mainMenuSub.gif) no-repeat right 20px;}
+.topNav a.message.focus{background-image: url();}
+.topNav .navDelimiter{height:44px; line-height:44px; color:#fff; margin:0 0px; float:left}
+.topNav a.forhelp{padding-right:0; background-image:none}
+.gline {width:100%; height:0; line-height:0; font-size:0; border-bottom:1px solid #ddd; padding:0 8px; margin:6px 0}
+span.numWhite {background:#fff; color:#b70c0c}
+
+.msgList {width:488px; overflow:hidden; overflow-y:auto}
+.msgList li{width:450px; padding:10px 28px 10px 10px; border-bottom:1px solid #ddd; line-height:130%}
+.msgList li.new{border-left:6px solid #c70708}
+
+.fixedPop {position:fixed; _position:absolute}
+
+
+/* help */
+.pageTitle {height:40px;font-size:24px;color:#fff;font-weight:bold;margin-top:8px; font-family:黑体}
+.searchBoxTop {width:280px; height:27px; line-height:27px; padding-left:12px; border:none; background:#fff; -moz-border-radius:5px 0 0 5px; -webkit-border-radius:5px 0 0 5px; border-radius:5px 0 0 5px}
+.searchBtnTop {width:38px; height:27px; padding:0 5px 0 6px; border:none; cursor:pointer; background:#fff url(../images/bg_searchBtnTop.png) no-repeat 5px top; -moz-border-radius:0 5px 5px 0; -webkit-border-radius:0 5px 5px 0; border-radius:0 5px 5px 0}
+
+
+/* new version message 2014-08-28*/
+.global_nav_message {display: none; width: 400px; left:800px; top:40px; background: #fff; border: 1px solid #ddd; 
+	border-radius: 3px; position:fixed; z-index: 10000; box-shadow: 0 6px 8px 0px rgba(0, 0, 0, 0.3)}
+
+.global_nav_message:after {
+	content: "";
+	position: absolute;
+	top: -6px;
+	left: 195px;
+	width: 10px;
+	height: 10px;
+	display: block;
+	background-color: inherit;
+	border-style: solid;
+	border-width: 0;
+	-webkit-transform: rotate(45deg);
+}
+.global_nav_message .messageList {overflow: auto;}
+.global_nav_message .msgItem {border-bottom: 1px solid #ddd; padding: 0 15px 0 20px; line-height:150%; position: relative;}
+.global_nav_message .msgItem .msgFooter {text-align: right; margin-top: 5px; margin-bottom: 5px; height:24px; line-height:24px;}
+
+.global_nav_message .childMsgItem {border-top: 1px dashed #ddd; padding: 15px 0 0 0; line-height:150%;}
+.global_nav_message .childMsgItem:first-child {border-top: none; }
+.global_nav_message .childMsgTitle {position: absolute; left: 20px; bottom: 8px;}
+
+.global_nav_message .switchBar {width: 10px; height: 10px; line-height: 10px; margin-top: 4px; border-radius: 2px; text-align: center; color: #666; border: 1px solid #ddd; background: #eee;}
+.global_nav_message .unread .unreadIdentity {width: 10px; height:8px; position:absolute; margin-top: 5px; margin-left: -20px; background: #ae2323; border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
+.global_nav_message .unread .unreadContent {color: #333;}
+.global_nav_message .unread .unreadContent:hover {color: #0088cc; text-decoration: underline;}
+.global_nav_message .unreadGroup .unreadIdentity {width: 10px; height:8px; position:absolute; margin-top: 5px; margin-left: -21px; background: #ae2323; border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
+.global_nav_message .expend_bg {background-color: rgb(250, 250, 250)}
+
+
+.global_nav_message .headerMsg_showMore {border-bottom: 1px solid #ccc; padding: 15px; text-align: center}
+.global_nav_message .showAll {padding: 15px; text-align: right; background: #eee;}
+.global_nav_message .noMore {padding: 25px; text-align: center}
+
+.global_pop_messageBox {
+	position: relative;
+	border: 1px solid #fd6a49;
+	background: #fef4f3;
+	color: #333;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+	margin-top: 5px;
+	padding: 20px 20px 15px 20px;
+	line-height:150%
+}
+.global_pop_messageBox .closeMessage {position: absolute; top: 6px; right: 6px;}

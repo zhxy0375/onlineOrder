@@ -1,0 +1,54 @@
+.TreePanel_List {width:100%; overflow:hidden; position:relative}
+.TreePanel_List li{width:100%; background:#fff; margin:1px 0; position:relative}
+.TreePanel_List li.current{background:#0084F1; color:#fff}
+
+.TreePanel_List li a,.TreePanel_List li a:hover{width:100%; height:22px; line-height:22px; color:#008aec}
+.TreePanel_List li a:hover{background:#E4F2FD; text-decoration:none}
+.TreePanel_List li .switch {width:22px; height:22px; position:absolute; top:0; left:0; cursor:pointer; background:url(../images/tree_switch.gif) no-repeat right -22px}
+.TreePanel_List li .TreeNode_new, .TreePanel_List li .TreeNode_new:hover {padding-left:22px; height:22px; line-height:22px; *padding-top:2px; *height:20px; *line-height:20px}
+.TreePanel_List li .TreeNode_new span{display: inline-block;height: 22px;line-height: 22px}
+.TreePanel_List li .open {background-position:right top}
+.TreePanel_List li .none {background-image:none}
+.TreePanel_List li.L0 .switch, .TreePanel_List li.L0 .switch:hover {}
+.TreePanel_List li.L0 .TreeNode_new, .TreePanel_List li.L0 .TreeNode_new:hover {}
+.TreePanel_List li.L1 .switch {left:22px}
+.TreePanel_List li.L1 .TreeNode_new, .TreePanel_List li.L1 .TreeNode_new:hover {padding-left:44px}
+.TreePanel_List li.L2 .switch {left:44px}
+.TreePanel_List li.L2 .TreeNode_new, .TreePanel_List li.L2 .TreeNode_new:hover {padding-left:66px}
+.TreePanel_List li.L3 .switch {left:66px}
+.TreePanel_List li.L3 .TreeNode_new, .TreePanel_List li.L3 .TreeNode_new:hover {padding-left:88px}
+.TreePanel_List li.L4 .switch {left:88px}
+.TreePanel_List li.L4 .TreeNode_new, .TreePanel_List li.L4 .TreeNode_new:hover {padding-left:110px}
+.TreePanel_List li.L5 .switch {left:110px}
+.TreePanel_List li.L5 .TreeNode_new, .TreePanel_List li.L5 .TreeNode_new:hover {padding-left:132px}
+.TreePanel_List li.L6 .switch {left:132px}
+.TreePanel_List li.L6 .TreeNode_new, .TreePanel_List li.L6 .TreeNode_new:hover {padding-left:154px}
+.TreePanel_List li.L7 .switch {left:154px}
+.TreePanel_List li.L7 .TreeNode_new, .TreePanel_List li.L7 .TreeNode_new:hover {padding-left:176px}
+.TreePanel_List li.L8 .switch {left:176px}
+.TreePanel_List li.L8 .TreeNode_new, .TreePanel_List li.L8 .TreeNode_new:hover {padding-left:198px}
+.TreePanel_List li a.current, .TreePanel_List li a.current:hover {background:#0084F1; color:#fff}
+.TreePanel_List li a.red, .TreePanel_List li a.red:hover {color:#CE4A3C}
+.TreePanel_List li a.pink, .TreePanel_List li a.pink:hover {color:#ffa29a}
+
+.TreePanel_List li.L0 span.TreeNode_new,.TreePanel_List li.L0 span.TreeNode_new:hover{padding-left:0;margin-left:22px}
+.TreePanel_List li.L1 span.TreeNode_new,.TreePanel_List li.L1 span.TreeNode_new:hover{padding-left:0;margin-left:44px}
+.TreePanel_List li.L2 span.TreeNode_new,.TreePanel_List li.L2 span.TreeNode_new:hover{padding-left:0;margin-left:66px}
+.TreePanel_List li.L3 span.TreeNode_new,.TreePanel_List li.L3 span.TreeNode_new:hover{padding-left:0;margin-left:88px}
+.TreePanel_List li.L4 span.TreeNode_new,.TreePanel_List li.L4 span.TreeNode_new:hover{padding-left:0;margin-left:110px}
+.TreePanel_List li.L5 span.TreeNode_new,.TreePanel_List li.L5 span.TreeNode_new:hover{padding-left:0;margin-left:132px}
+.TreePanel_List li.L6 span.TreeNode_new,.TreePanel_List li.L6 span.TreeNode_new:hover{padding-left:0;margin-left:154px}
+.TreePanel_List li.L7 span.TreeNode_new,.TreePanel_List li.L7 span.TreeNode_new:hover{padding-left:0;margin-left:176px}
+.TreePanel_List li.L8 span.TreeNode_new,.TreePanel_List li.L8 span.TreeNode_new:hover{padding-left:0;margin-left:198px}
+
+.chkedG {color:#51b203; font-weight:bold}
+.t_checkbox {width:22px; height:22px; background:url(../images/bg_checkbox.gif) no-repeat top left}
+.t_chk0 {}
+.t_chk1 {background-position:left -22px}
+.t_chk2 {}
+
+.autoComplete_tree {width:100%; border:none; height:285px; overflow:hidden; overflow-y: auto;}
+.autoComplete_tree a.current {background: #D3EBFD; text-decoration: none;}
+.autoComplete_tree a {height:22px; line-height:22px; padding-left:10px; color:#008AEC; display:block;}
+.autoComplete_tree a:hover {background:#E4F2FD; text-decoration: none;}
+#autoCByTree {width:320px; margin:10px 0 5px 10px}

@@ -75,13 +75,13 @@
         <context:exclude-filter type="regex" expression=".controller.*" />  --> 
     </context:component-scan>
 
-    <!--任务以及异步-->
-    <task:annotation-driven executor="myExecutor" scheduler="myScheduler" />
+    <!--任务以及异步
+    <task:annotation-driven executor="myExecutor" scheduler="myScheduler" /> -->
     
-    <!-- 配置默认的异步任务线程池 和 默认的调度器池 -->
+    <!-- 配置默认的异步任务线程池 和 默认的调度器池  
     <task:scheduler id="myScheduler" pool-size="${spring.myScheduler.poolsize}"/>
     <task:executor id="myExecutor" keep-alive="${spring.myExecutor.keepalive}" pool-size="${spring.myExecutor.poolsize}"/>
-    
+    -->
 
     <!-- 配置静态文件拦截 -->
     <mvc:resources mapping="/static/js/**" location="/js/"/>
