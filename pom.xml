@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
-		<spring.version>4.1.6.RELEASE</spring.version>
+		<spring.version>4.2.3.RELEASE</spring.version>
 		<tomcat.version>8.0.23</tomcat.version>
 	</properties>
 
@@ -488,7 +488,6 @@
 				<artifactId>maven-install-plugin</artifactId>
 				<version>2.5.2</version>
 			</plugin>
-
 			<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>

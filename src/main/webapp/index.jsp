@@ -110,9 +110,9 @@
                 console.log(initData);
             });
         	   
-        	   stompClient.disconnect(function() {
+        	/*    stompClient.disconnect(function() {
            	    alert("See you next time!");
-           	  });
+           	  }); */
         	   
         }, function () {
             connect();

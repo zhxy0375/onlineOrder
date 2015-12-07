@@ -62,7 +62,6 @@
 			</list>
 		</property>
 	</bean>
-	
  
 	<!-- 配置Annotation支持 -->
 	<context:annotation-config/>
@@ -75,13 +74,13 @@
         <context:exclude-filter type="regex" expression=".controller.*" />  --> 
     </context:component-scan>
 
-    <!--任务以及异步
-    <task:annotation-driven executor="myExecutor" scheduler="myScheduler" /> -->
+    <!--任务以及异步 --> <!-- 命名为taskScheduler 是因为 spring 4.1.16 的一个bug，导致webSocket使用有问题 https://github.com/spring-cloud/spring-cloud-netflix/issues/538-->
+    <task:annotation-driven executor="myExecutor" scheduler="taskScheduler" /> 
     
-    <!-- 配置默认的异步任务线程池 和 默认的调度器池  
-    <task:scheduler id="myScheduler" pool-size="${spring.myScheduler.poolsize}"/>
+    <!-- 配置默认的异步任务线程池 和 默认的调度器池  -->
+    <task:scheduler id="taskScheduler" pool-size="${spring.myScheduler.poolsize}"/>
     <task:executor id="myExecutor" keep-alive="${spring.myExecutor.keepalive}" pool-size="${spring.myExecutor.poolsize}"/>
-    -->
+    
 
     <!-- 配置静态文件拦截 -->
     <mvc:resources mapping="/static/js/**" location="/js/"/>
