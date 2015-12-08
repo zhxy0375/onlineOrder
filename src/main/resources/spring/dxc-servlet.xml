@@ -40,7 +40,7 @@
 			<ref bean="fastJsonHttpMessageConverter" />
 		</mvc:message-converters>
 	</mvc:annotation-driven>
-
+ 
 	<!-- 定义消息转换器1 -->
 	<bean id="stringHttpMessageConverter"
 		class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -67,6 +67,7 @@
 	<context:annotation-config/>
 	<!-- 配置AspectJ注解支持 -->
 	<aop:aspectj-autoproxy /> 
+	
 <!-- org.dxc.onlineOrder.* -->
     <context:component-scan base-package="org.dxc.onlineOrder">
      <!--   <context:exclude-filter type="regex" expression=".service.*" />
