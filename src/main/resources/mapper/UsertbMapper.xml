@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UsertbMapper" >
 
-    <select id="selectOne" resultType="org.dxc.onlineOrder.model.Usertb">
+    <select id="selectOne" resultType="usertb">
         SELECT  * FROM usertb limit 1 
     </select>
     
-    <select id="queryList" resultType="org.dxc.onlineOrder.model.Usertb">
+    <select id="queryList" resultType="usertb">
         SELECT us.age ,us.id ,us.ucreatetime,  us.uname
         FROM    usertb  us  limit 10 
     </select>

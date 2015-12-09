@@ -10,9 +10,6 @@
                 http://www.springframework.org/schema/aop
                 http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-
-
-  
     <!-- 配置DataSource数据源 -->
     <bean id="mybatisDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="driverClassName" value="${dbcp.driver}" />
@@ -40,10 +37,10 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="mybatisDataSource" />
         <property name="configLocation" value="classpath:spring/mybatis-config.xml" />
-  <!--      <property name="typeAliasesPackage" >
-            <value>org.dxc.model;</value>
+      <property name="typeAliasesPackage" >
+            <value>org.dxc.onlineOrder.model;</value>
         </property>
-         <property name="typeAliases" >
+    <!--     <property name="typeAliases" >
          	<array>
          		<value>com.dooioo.se.dao.support.Pagination</value>
          	</array>
