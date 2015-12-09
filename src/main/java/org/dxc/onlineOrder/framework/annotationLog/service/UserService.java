@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service("conflictUserService")
-//@Qualifier("conflictUserService")
+//@Qualifier("conflictUserService") //不能用这个改bean名称； 和autowired 弄混了
 public class UserService {
 	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
