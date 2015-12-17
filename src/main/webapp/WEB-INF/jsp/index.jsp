@@ -9,7 +9,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title> - 我家</title>
 	<c:set var="versionNo" value="20151209"></c:set>
-
 	<link type="text/css" rel="stylesheet" href="/static/css/main.css?v=${versionNo}">
 	<link type="text/css" rel="stylesheet" href="/static/css/fky.css?v=${versionNo}">
 	<link type="text/css" rel="stylesheet" href="/static/css/treeNew.css?v=${versionNo}">
@@ -30,9 +29,23 @@
 <script type="text/javascript" src="/static/js/lib/service.js?v=${versionNo}"></script>
 <script type="text/javascript" src="/static/js/lib/angular-popuplayer-2.0.js"></script>
 <script type="text/javascript" src="/static/js/lib/angular-autocomplete-1.0.js"></script>
+<script type="text/javascript">
+
+        //初始化各系统及各环境下的地址
+        var ResourceMap = new Object();
+        //这里要 ${} 是要使用标签的  taglib;  前面一直从session中取不到 是因为 ${} 
+        <%-- ResourceMap = angular.fromJson(${ResourceAddrMap}); --%>
+        
+        ResourceMap = angular.fromJson(<%=session.getAttribute("AddrMap")%>);
+        
+        // console.log(ResourceMap.version)
+
+    </script>
+    
 <div class="container" ng-app="zrApp" ng-controller="zrController">
 	<h1 class="f18 mt_20 ">自如收房管家楼盘配置页</h1>
 <span class="red" style="float: right; margin-right: 40px;">！！！红色字体标识的是过时数据或者此人已离职或无管家楼盘配置权限</span>
+	<!--  <div><span><%=session.getAttribute("AddrMap")%></span></div> -->
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableListNew mt_5" ng-click="click($event)">
 	 <tbody ng-show="showTimeWait"><tr><td colspan="6" class="pr_10" align="center"><img src="http://dui.dooioo.com/public/images/icon_ajaxload.gif"></td></tr></tbody>
 		<tbody ng-hide="showTimeWait">
@@ -82,7 +95,7 @@
     	}
     	$scope.content = '';
 // $scope.helper.sendMsg
-        $scope.websocketUrl = 'ws://localhost.dooioo.net:8080/messages';
+        $scope.websocketUrl = ResourceMap.g_addr_ws+'/messages';
         
         $scope.webSocket = new WebSocket($scope.websocketUrl);
 

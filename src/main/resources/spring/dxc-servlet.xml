@@ -17,11 +17,10 @@
         http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
     <!--初始化属性文件   com.dooioo.common.AppPropertyConfigurer -->
-    <bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <bean id="applicationProperties" class="org.dxc.onlineOrder.framework.properties.AppPropertyConfigurer">
         <property name="locations">
             <list>
                 <value>classpath:global.properties</value>
-                <value>classpath:jdbc.properties</value>
                 <value>classpath:session.properties</value>
             </list>
         </property>
@@ -100,4 +99,23 @@
     <!--Memcache加载
     <import resource="classpath:spring/memcache.xml" /> -->
 
+
+	 <mvc:interceptors>
+        <mvc:interceptor>
+            <!--自己需要拦截的页面 -->
+            <mvc:mapping path="/**" />
+            <bean class="org.dxc.onlineOrder.framework.interceptor.LoginInterceptor" />
+        </mvc:interceptor>
+        <!--防止重复提交
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.dooioo.fy.framework.AvoidDuplicateSubmission2Interceptor"/>
+        </mvc:interceptor> -->
+        <!--统计信息
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.lianjia.sh.se.executecount.client.web.WebRequestMappingInterceptor"/>
+        </mvc:interceptor> -->
+    </mvc:interceptors>
+    
 </beans>

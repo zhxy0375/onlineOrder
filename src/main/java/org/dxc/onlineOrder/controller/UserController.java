@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/user/info")
+@RequestMapping("/user")
 public class UserController  {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
@@ -25,8 +25,16 @@ public class UserController  {
     @Autowired
     private UserService userService ;
     
+    
+    @RequestMapping("/")
+    public String index ( HttpServletRequest req){
+    	
+    	LOGGER.info("session id:{}",req.getRequestedSessionId());
+    	return "index";
+    }
+    
     @ResponseBody
-    @RequestMapping("/{id}")
+    @RequestMapping("/info/{id}")
     public Usertb getRandomOne (@PathVariable String id, HttpServletRequest req){
     	
     	LOGGER.info("id:{}",id);
